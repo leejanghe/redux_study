@@ -1,11 +1,11 @@
-import Counter from "./components/Count";
-import Todos from "./components/Todos";
+import CountContainer from "./containers/CountContainer";
+import TodosContainer from "./containers/TodosContainer";
 function App() {
   return (
     <div className="App">
-      <Counter number={0} />
+      <CountContainer />
       <hr />
-      <Todos />
+      <TodosContainer />
     </div>
   );
 }
