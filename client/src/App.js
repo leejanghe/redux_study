@@ -12,6 +12,37 @@ const RedText = styled.div`
   }
 `;
 
+const TextStyled = styled.div`
+  text-align: center;
+  > h1 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  > button {
+    width: 150px;
+    margin: 10px;
+    background: black;
+    color: white;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    :hover {
+      color: yellow;
+    }
+    :active {
+      transform: scale(0.99);
+    }
+  }
+  > p {
+    border: 1px solid 00000;
+    padding: 20px;
+    font-size: 20px;
+    color: green;
+  }
+`;
+
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [modalVisbleId, setModalVisbleId] = useState("");
@@ -133,7 +164,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <TextStyled>
       {/* <CountContainer />
       <hr />
       <TodosContainer />
@@ -178,7 +209,7 @@ function App() {
       <button onClick={changeKo}>한글번역</button>
       <button onClick={changeEng}>영어번역</button>
       <button onClick={() => getRandomProverb()}>랜덤명언출력!</button>
-    </div>
+    </TextStyled>
   );
 }
 
