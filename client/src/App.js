@@ -79,6 +79,10 @@ function App() {
     "누구나 자신의 능력을 믿어야 한다. 그렇지 않으면 누구도 자신의 능력을 믿지 않는다.",
     "같은 실수를 두려워하되 새로운 실수를 두려워하지 마라. 실수는 곧 경험이다.",
     "폭력은 언제나 자기 자신을 약화시킨다.",
+    "사랑은 누구나 느끼지만, 그것을 표현하는 사람은 드물다.",
+    "술 한잔은 마음을 편안하게 하지만, 술 한잔은 마음을 편안하게 하지 않는다.",
+    "누구나 자신의 능력을 믿어야 한다. 그렇지 않으면 누구도 자신의 능력을 믿지 않는다.",
+    "인생은 무엇을 얻는가가 아니라 무엇을 주는가에 달려 있다.",
   ]);
 
   const proverbs1 = [
@@ -87,8 +91,12 @@ function App() {
     "Everyone has to believe in their own abilities. Otherwise, no one believes in their abilities.",
     "Fear the same mistakes, but not the new ones. Mistakes are experience.",
     "Violence always weakens itself.",
+    "Love is felt by everyone, but few express it.",
+    "A glass of wine relaxes the mind, but a glass of wine does not.",
+    "Everyone has to believe in their own abilities. Otherwise, no one believes in their abilities.",
+    "Life depends on what you give, not what you get.",
   ];
-  console.log(proverbs);
+  console.log("신동첣평쉰");
   const getRandomProverb = () => {
     const randomIndex = Math.floor(Math.random() * proverbs.length);
     setIdx(randomIndex);
