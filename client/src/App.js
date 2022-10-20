@@ -92,6 +92,8 @@ function App() {
   const getRandomProverb = () => {
     const randomIndex = Math.floor(Math.random() * proverbs.length);
     setIdx(randomIndex);
+    setShowEg(false);
+    setShowKo(true);
     // setProverbs([proverbs[randomIndex]]);
   };
 
