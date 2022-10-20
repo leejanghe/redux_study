@@ -3,6 +3,8 @@ import TodosContainer from "./containers/TodosContainer";
 import { useState } from "react";
 import styled from "styled-components";
 import ModalForm from "./ModalForm";
+import { useTranslation } from "react-i18next";
+import i18n from "./lang/i18n";
 const RedText = styled.div`
   border: 1px solid black;
   .like {
@@ -69,6 +71,42 @@ function App() {
   // const [count, setCout] = useState(0);
   // const [isLike, setLike] = useState(false);
 
+  const [idx, setIdx] = useState([]);
+
+  const [proverbs, setProverbs] = useState([
+    "나 자신에 대한 자신감을 잃으면 온 세상이 나의 적이 된다.",
+    "항상 맑으면 사막이 된다. 비가 내리고 바람이 불어야만 비옥한 땅이 된다",
+    "누구나 자신의 능력을 믿어야 한다. 그렇지 않으면 누구도 자신의 능력을 믿지 않는다.",
+    "같은 실수를 두려워하되 새로운 실수를 두려워하지 마라. 실수는 곧 경험이다.",
+    "폭력은 언제나 자기 자신을 약화시킨다.",
+  ]);
+
+  const proverbs1 = [
+    "Death to myself has gone all over the world.",
+    "If it is always sunny, it becomes a desert. Only when it rains and the wind blows, the land becomes fertile",
+    "Everyone has to believe in their own abilities. Otherwise, no one believes in their abilities.",
+    "Fear the same mistakes, but not the new ones. Mistakes are experience.",
+    "Violence always weakens itself.",
+  ];
+  console.log(proverbs);
+  const getRandomProverb = () => {
+    const randomIndex = Math.floor(Math.random() * proverbs.length);
+    setIdx(randomIndex);
+    // setProverbs([proverbs[randomIndex]]);
+  };
+
+  const [showEg, setShowEg] = useState(false);
+  const [showKo, setShowKo] = useState(true);
+  const changeEng = () => {
+    setShowEg(true);
+    setShowKo(false);
+  };
+
+  const changeKo = () => {
+    setShowEg(false);
+    setShowKo(true);
+  };
+
   const plusBtn = (i) => {
     console.log(data);
     if (data[i].isLike === false) {
@@ -90,7 +128,7 @@ function App() {
       <hr />
       <TodosContainer />
       <hr /> */}
-      <div>
+      {/* <div>
         {data.map((a, i) => {
           return (
             <RedText key={a.id}>
@@ -121,7 +159,15 @@ function App() {
             </RedText>
           );
         })}
-      </div>
+      </div> */}
+
+      <h1>오늘의 명언</h1>
+      {showKo ? <p>{proverbs[idx]}</p> : null}
+      {showEg ? <p>{proverbs1[idx]}</p> : null}
+      {/* <p>{proverbs1[idx]}</p> */}
+      <button onClick={changeKo}>한글번역</button>
+      <button onClick={changeEng}>영어번역</button>
+      <button onClick={() => getRandomProverb()}>랜덤명언출력!</button>
     </div>
   );
 }
